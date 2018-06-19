@@ -9,15 +9,15 @@ module.exports = function(RED) {
       this.to = config.to;
 
       this.on('input', (msg) => {
-          let sms = new BouygueSMS(this.username || msg.username, this.password || msg.password);
-
-          sms.send(msg.payload, this.to || msg.to, (error) => {
-            if (error) {
-              this.error(error, msg);
-            } else {
-              this.send(msg);
-            }
-          });
+        let sms = new BouygueSMS(this.username || msg.username, this.password || msg.password);
+        
+        sms.send(msg.payload, this.to || msg.to, (error) => {
+          if (error) {
+            this.error(error, msg);
+          } else {
+            this.send(msg);
+          }
+        });
       });
   }
 

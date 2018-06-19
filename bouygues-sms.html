@@ -3,7 +3,7 @@
     category: 'social',
     color: '#a6bbcf',
     defaults: {
-      to: { value: '', validate: RED.validators.regex(/[0-9]*/) },
+      to: { value: '', validate: RED.validators.regex(/^[0-9]*$/) },
       name: { value: '' }
     },
     credentials: {
